@@ -1,4 +1,3 @@
-<!-- src/views/event/DetailView.vue -->
 <script setup lang="ts">
 import { toRefs, defineProps, onMounted } from 'vue'
 import { type Event } from '@/types'
@@ -23,11 +22,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="message" id="flashMessage">
-    <h4>{{ message }}</h4>
+  <div v-if="message" id="flashMessage" class="bg-yellow-200 p-4 rounded-md mb-4 animate-yellofade">
+    <h4 class="font-semibold">{{ message }}</h4>
   </div>
-  <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
-  <p>{{ event.description }}</p>
+  <p class="text-gray-700">{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
+  <p class="text-gray-600 mt-2">{{ event.description }}</p>
 </template>
 
 <style scoped>

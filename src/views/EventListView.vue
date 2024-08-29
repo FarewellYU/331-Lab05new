@@ -38,15 +38,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>Events For Good</h1>
+  <h1 class="text-xl font-bold mb-4">Events For Good</h1>
   <div class="flex flex-col items-center">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
     <EventDetails v-for="event in events" :key="event.id" :event="event" />
-    <div class="pagination">
+    <div class="pagination flex w-72 justify-between mt-4">
       <RouterLink
         v-if="props.page > 1"
         :to="{ name: 'event-list-view', query: { page: props.page - 1, perPage: props.perPage }}"
         rel="prev"
+        class="text-blue-500 hover:underline"
       >
         &#60; Prev page
       </RouterLink>
@@ -54,21 +55,10 @@ onMounted(() => {
         v-if="hasNextPage"
         :to="{ name: 'event-list-view', query: { page: props.page + 1, perPage: props.perPage }}"
         rel="next"
+        class="text-blue-500 hover:underline"
       >
         Next Page &#62;
       </RouterLink>
     </div>
   </div>
 </template>
-
-<style scoped>
-.pagination {
-  display: flex;
-  width: 290px;
-}
-.pagination a {
-  flex: 1;
-  text-decoration: none;
-  color: #2c3e50;
-}
-</style>
