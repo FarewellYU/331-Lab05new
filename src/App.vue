@@ -42,7 +42,7 @@ function updatePerPage(size: number) {
   </div>
 </template>
 
-<style>
+<!-- <style>
 @keyframes yellofade {
   from {
     background-color: yellow;
@@ -55,4 +55,4 @@ function updatePerPage(size: number) {
 #flashMessage {
   animation: yellofade 3s ease-in-out;
 }
-</style>
+</style> -->
