@@ -1,12 +1,14 @@
 <script setup lang="ts">
-  import EventCard from '@/components/EventCard.vue'
-  import EventDetails from '@/components/EventDetails.vue'
-  import Student from '@/types/Student'
+  // import EventCard from '@/components/EventCard.vue'
+  // import EventDetails from '@/components/EventDetails.vue'
+  // import Student from '@/types/Student'
+  import { type Student } from '@/types'
   import StudentCard from '@/components/StudentCard.vue'
   import { ref, onMounted } from 'vue'
-  import EventService from '@/services/EventService'
+  // import EventService from '@/services/EventService'
   import StudentService from '@/services/StudentService'
-  const students = ref<Student[]>(null)
+  // const students = ref<Student[]>([])
+  const students = ref<Student[] | null>(null)
   onMounted(() =>{
     StudentService.getEvents()
     .then((response) =>{
