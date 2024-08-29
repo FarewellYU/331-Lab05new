@@ -20,7 +20,7 @@ function updatePerPage(size: number) {
 <template>
  <div class="text-center font-sans text-gray-700 antialias">
     <header>
-      <div v-if="message && !route.name.startsWith('event-detail')" id="flashMessage">
+      <div id="flashMessage" class="animate-fade" v-if="message">
         <h4>{{ message }}</h4>
       </div>
       <div class="wrapper">
