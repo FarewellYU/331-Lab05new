@@ -7,8 +7,8 @@
   import { ref, onMounted } from 'vue'
   // import EventService from '@/services/EventService'
   import StudentService from '@/services/StudentService'
-  // const students = ref<Student[]>([])
-  const students = ref<Student[] | null>(null)
+  const students = ref<Student[]>([])
+  // const students = ref<Student[] | null>(null)
   onMounted(() =>{
     StudentService.getEvents()
     .then((response) =>{
