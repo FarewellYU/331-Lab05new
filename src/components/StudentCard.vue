@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import {type Student} from '@/types'
+import type { Student } from '@/types'
 // import type { Student } from '@/types/Student'
 // import Student from '@/types/Student'
 defineProps<{
   student: Student
 }>()
 </script>
- 
+
 <template>
-  <div class ="student-class">
+  <div class="student-class">
     <div class="student-card">
       <h2>{{ student.name }} {{ student.surname }}</h2>
-      <span>GPA :   {{ student.gpa }}</span>
+      <span>GPA : {{ student.gpa }}</span>
     </div>
   </div>
 </template>
- 
+
 <style scoped>
 .student-card {
   padding: 20px;
@@ -29,4 +29,3 @@ defineProps<{
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
 }
 </style>
- 

@@ -3,7 +3,7 @@ import { ref, onMounted, watchEffect, defineProps, computed } from 'vue'
 import EventCard from '@/components/EventCard.vue'
 import EventDetails from '@/components/EventDetails.vue'
 import EventService from '@/services/EventService'
-import { type Event } from '@/types'
+import type { Event } from '@/types'
 
 const props = defineProps({
   page: {
@@ -45,7 +45,7 @@ onMounted(() => {
     <div class="pagination flex w-72 justify-between mt-4">
       <RouterLink
         v-if="props.page > 1"
-        :to="{ name: 'event-list-view', query: { page: props.page - 1, perPage: props.perPage }}"
+        :to="{ name: 'event-list-view', query: { page: props.page - 1, perPage: props.perPage } }"
         rel="prev"
         class="text-blue-500 hover:underline"
       >
@@ -53,7 +53,7 @@ onMounted(() => {
       </RouterLink>
       <RouterLink
         v-if="hasNextPage"
-        :to="{ name: 'event-list-view', query: { page: props.page + 1, perPage: props.perPage }}"
+        :to="{ name: 'event-list-view', query: { page: props.page + 1, perPage: props.perPage } }"
         rel="next"
         class="text-blue-500 hover:underline"
       >

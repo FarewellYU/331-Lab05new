@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView, useRouter, useRoute } from 'vue-router'
-import { useMessageStore } from './stores/message';
-import { storeToRefs } from 'pinia';
+import { useMessageStore } from './stores/message'
+import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 
 const perPage = ref(2)
@@ -24,9 +24,24 @@ function updatePerPage(size: number) {
       </div>
       <div class="wrapper">
         <nav class="py-6">
-          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'event-list-view' }">Event</RouterLink>
-          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{name: 'about' }">About</RouterLink>
-          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'student' }">Student</RouterLink>
+          <RouterLink
+            class="font-bold text-gray-700"
+            exact-active-class="text-green-500"
+            :to="{ name: 'event-list-view' }"
+            >Event</RouterLink
+          >
+          <RouterLink
+            class="font-bold text-gray-700"
+            exact-active-class="text-green-500"
+            :to="{ name: 'about' }"
+            >About</RouterLink
+          >
+          <RouterLink
+            class="font-bold text-gray-700"
+            exact-active-class="text-green-500"
+            :to="{ name: 'student' }"
+            >Student</RouterLink
+          >
         </nav>
       </div>
     </header>

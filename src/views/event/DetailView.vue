@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { toRefs, defineProps, onMounted } from 'vue'
-import { type Event } from '@/types'
+import type { Event } from '@/types'
 import { useMessageStore } from '@/stores/message'
 import { storeToRefs } from 'pinia'
 

@@ -1,26 +1,26 @@
 <script setup lang="ts">
-  // import EventCard from '@/components/EventCard.vue'
-  // import EventDetails from '@/components/EventDetails.vue'
-  // import Student from '@/types/Student'
-  import { type Student } from '@/types'
-  import StudentCard from '@/components/StudentCard.vue'
-  import { ref, onMounted } from 'vue'
-  // import EventService from '@/services/EventService'
-  import StudentService from '@/services/StudentService'
-  const students = ref<Student[]>([])
-  // const students = ref<Student[] | null>(null)
-  onMounted(() =>{
-    StudentService.getEvents()
-    .then((response) =>{
+// import EventCard from '@/components/EventCard.vue'
+// import EventDetails from '@/components/EventDetails.vue'
+// import Student from '@/types/Student'
+import type { Student } from '@/types'
+import StudentCard from '@/components/StudentCard.vue'
+import { ref, onMounted } from 'vue'
+// import EventService from '@/services/EventService'
+import StudentService from '@/services/StudentService'
+const students = ref<Student[]>([])
+// const students = ref<Student[] | null>(null)
+onMounted(() => {
+  StudentService.getEvents()
+    .then((response) => {
       // console.log(response.data)
       students.value = response.data
     })
-    .catch((error) =>{
+    .catch((error) => {
       console.error('There was an error!', error)
     })
-  })
+})
 </script>
- 
+
 <template>
   <h1>Students List</h1>
   <!-- new element -->
@@ -28,7 +28,7 @@
     <StudentCard v-for="student in students" :key="student.id" :student="student" />
   </div>
 </template>
- 
+
 <style scoped>
 .students {
   display: flex;
@@ -36,4 +36,3 @@
   align-items: center;
 }
 </style>
- 
