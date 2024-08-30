@@ -17,7 +17,7 @@ function updatePerPage(size: number) {
 </script>
 
 <template>
-    <SpeedInsights/>
+  <SpeedInsights/>
   <div class="text-center font-sans text-gray-700 antialiased">
     <header>
       <div id="flashMessage" class="animate-yellofade" v-if="message">
